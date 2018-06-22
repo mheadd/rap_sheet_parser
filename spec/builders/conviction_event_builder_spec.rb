@@ -111,7 +111,7 @@ module RapSheetParser
         TEXT
 
         tree = RapSheetGrammarParser.new.parse(text)
-        event = described_class.new(tree.cycles[0].events[0]).build
+        event = described_class.new(tree.cycles[0].events[0], logger: nil).build
 
         expect(event.dismissed_by_pc1203?).to eq true
       end
@@ -139,7 +139,7 @@ module RapSheetParser
         TEXT
 
         tree = RapSheetGrammarParser.new.parse(text)
-        event = described_class.new(tree.cycles[0].events[0]).build
+        event = described_class.new(tree.cycles[0].events[0], logger: nil).build
 
         expect(event.sentence.jail).to eq 1.month
       end
