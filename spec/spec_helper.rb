@@ -1,5 +1,15 @@
 require "bundler/setup"
+require 'active_model'
+require 'ostruct'
 require "rap_sheet_parser"
+
+module RapSheetParser
+  class ApplicationRecord
+    def self.create!(params={})
+      OpenStruct.new(params)
+    end
+  end
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

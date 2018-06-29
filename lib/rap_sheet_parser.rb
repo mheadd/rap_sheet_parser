@@ -1,6 +1,8 @@
 require 'treetop'
 require 'logger'
+require 'active_record'
 
+require 'rap_sheet_parser/models/application_record'
 require 'rap_sheet_parser/models/conviction_count'
 require 'rap_sheet_parser/models/conviction_count_collection'
 require 'rap_sheet_parser/models/arrest_event'
